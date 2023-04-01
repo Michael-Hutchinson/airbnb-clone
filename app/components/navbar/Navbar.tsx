@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '../Container';
+import Container from '../container/Container';
 import Logo from './logo/Logo';
 import Search from './search/Search';
 import UserMenu from './usermenu/UserMenu';
