@@ -60,6 +60,10 @@ const Modal = ({
     secondaryAction();
   }, [disabled, secondaryAction]);
 
+  if (!isOpen) {
+    return null;
+  }
+
   return <div>Modal</div>;
 };
 
