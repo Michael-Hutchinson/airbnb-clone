@@ -1,4 +1,6 @@
-import React, { ReactElement } from 'react';
+'use client';
+
+import React, { ReactElement, useCallback, useEffect, useState } from 'react';
 
 interface ModalProps {
   isOpen?: boolean;
@@ -25,6 +27,31 @@ const Modal = ({
   secondaryAction,
   secondaryLabel,
 }: ModalProps) => {
+  const [showModal, setShowModal] = useState(isOpen);
+
+  useEffect(() => {
+    setShowModal(isOpen);
+  }, [isOpen]);
+
+  const handleClose = useCallback(() => {
+    if (disabled) {
+      return;
+    }
+
+    setShowModal(false);
+    setTimeout(() => {
+      onClose();
+    }, 300);
+  }, [disabled, onClose]);
+
+  const handleSubmit = useCallback(() => {
+    if (disabled) {
+      return;
+    }
+
+    onSubmit();
+  }, [disabled, onSubmit]);
+
   return <div>Modal</div>;
 };
 
