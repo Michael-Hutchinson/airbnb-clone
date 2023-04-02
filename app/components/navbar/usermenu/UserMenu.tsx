@@ -2,6 +2,7 @@
 import React, { useCallback, useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import Avatar from '../../avatar/Avatar';
+import MenuItem from '../menuitem/MenuItem';
 
 const UserMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +32,11 @@ const UserMenu = () => {
       </div>
       {isOpen && (
         <div className='absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm'>
-          <div className='flex flex-col cursor-pointer'>User Menu</div>
+          <div className='flex flex-col cursor-pointer'>
+            <>
+              <MenuItem />
+            </>
+          </div>
         </div>
       )}
     </div>
