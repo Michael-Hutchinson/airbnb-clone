@@ -17,7 +17,7 @@ interface ModalProps {
 }
 
 const Modal = ({
-  isOpen = true,
+  isOpen,
   onClose,
   onSubmit,
   title,
@@ -83,6 +83,7 @@ const Modal = ({
               </button>
               <div className='text-lg font-semibold'>{title}</div>
             </div>
+            <div className='relative p-6 flex-auto'>{body}</div>
           </div>
         </div>
       </div>
