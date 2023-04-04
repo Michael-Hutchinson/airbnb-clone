@@ -23,6 +23,10 @@ const RegisterModal = () => {
     },
   });
 
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    setIsLoading(true);
+  };
+
   return <div>Register Modal</div>;
 };
 
