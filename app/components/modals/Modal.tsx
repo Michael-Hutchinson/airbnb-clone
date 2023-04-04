@@ -87,7 +87,11 @@ const Modal = ({
             <div className='relative p-6 flex-auto'>{body}</div>
             <div className='flex flex-col gap-2 p-6'>
               <div className='flex flex-row items-center gap-4 w-full'>
-                <Button />
+                <Button
+                  disabled={disabled}
+                  label={actionLabel}
+                  onClick={handleSubmit}
+                />
               </div>
             </div>
           </div>
