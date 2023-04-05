@@ -84,6 +84,12 @@ const RegisterModal = () => {
         icon={FcGoogle}
         onClick={() => {}}
       />
+      <Button
+        outline
+        label='Continue with Github'
+        icon={AiFillGithub}
+        onClick={() => {}}
+      />
     </div>
   );
 
