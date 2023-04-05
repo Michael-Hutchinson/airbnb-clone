@@ -7,6 +7,7 @@ import { AiFillGithub } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import Modal from '../Modal';
+import Heading from '../../heading/Heading';
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
@@ -40,7 +41,11 @@ const RegisterModal = () => {
       });
   };
 
-  const bodyContent = <div className='flex flex-col gap-4'>Hello</div>;
+  const bodyContent = (
+    <div className='flex flex-col gap-4'>
+      <Heading />
+    </div>
+  );
 
   return (
     <Modal
