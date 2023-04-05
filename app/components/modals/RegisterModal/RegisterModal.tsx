@@ -6,6 +6,7 @@ import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { AiFillGithub } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
+import Modal from '../Modal';
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
@@ -39,7 +40,16 @@ const RegisterModal = () => {
       });
   };
 
-  return <div>Register Modal</div>;
+  return (
+    <Modal
+      disabled={isLoading}
+      isOpen={registerModal.isOpen}
+      title='Register'
+      actionLabel='Continue'
+      onClose={registerModal.onClose}
+      onSubmit={handleSubmit(onSubmit)}
+    />
+  );
 };
 
 export default RegisterModal;
