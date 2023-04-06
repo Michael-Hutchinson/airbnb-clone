@@ -5,10 +5,14 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import Avatar from '../../avatar/Avatar';
 import MenuItem from '../menuitem/MenuItem';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
-import LoginModal from '../../modals/LoginModal/LoginModal';
 import useLoginModal from '@/app/hooks/useLoginModal';
+import { User } from '@prisma/client';
 
-const UserMenu = () => {
+interface UserMenuProps {
+  currentUser?: User | null;
+}
+
+const UserMenu = ({ currentUser }: UserMenuProps) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const [isOpen, setIsOpen] = useState(false);
