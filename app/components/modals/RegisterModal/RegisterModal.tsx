@@ -19,6 +19,7 @@ const RegisterModal = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FieldValues>({
     defaultValues: {
@@ -40,6 +41,7 @@ const RegisterModal = () => {
         toast.error('There was an error');
       })
       .finally(() => {
+        reset();
         setIsLoading(false);
       });
   };
