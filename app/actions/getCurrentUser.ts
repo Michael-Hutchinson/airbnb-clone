@@ -23,7 +23,11 @@ export async function getCurrentUser() {
       return null;
     }
 
-    return currentUser;
+    return {
+      ...currentUser,
+      createdAt: currentUser.createdAt.toISOString(),
+      updatedAt: currentUser.updatedAt.toISOString(),
+    };
   } catch (error) {
     return null;
   }
