@@ -6,6 +6,7 @@ import Logo from './logo/Logo';
 import Search from './search/Search';
 import UserMenu from './usermenu/UserMenu';
 import { SafeUser } from '@/app/types';
+import Categories from './categories/Categories';
 
 interface NavbarProps {
   currentUser?: SafeUser | null;
@@ -23,6 +24,7 @@ const Navbar = ({ currentUser }: NavbarProps) => {
           </div>
         </Container>
       </div>
+      <Categories />
     </div>
   );
 };
