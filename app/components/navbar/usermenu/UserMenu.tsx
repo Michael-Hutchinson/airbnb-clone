@@ -22,6 +22,14 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
     setIsOpen((value) => !value);
   }, []);
 
+  const onRent = useCallback(() => {
+    if (!currentUser) {
+      return loginModal.onOpen();
+    }
+
+    //TODO: Redirect to rent modal
+  }, [currentUser, loginModal]);
+
   return (
     <div className='relative'>
       <div className='flex flex-row items-center gap-3'>
