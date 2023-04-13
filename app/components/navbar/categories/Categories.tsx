@@ -22,7 +22,6 @@ const Categories = () => {
             key={item.label}
             label={item.label}
             selected={item.label === category}
-            description={item.description}
             icon={item.icon}
           />
         ))}
