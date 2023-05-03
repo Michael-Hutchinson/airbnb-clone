@@ -5,6 +5,7 @@ import Modal from '../Modal';
 import { useMemo, useState } from 'react';
 import Heading from '../../heading/Heading';
 import { categories } from '../../navbar/categories/categoryItems';
+import CategoryInput from '../../input/CategoryInput/CategoryInput';
 
 enum Steps {
   Category = 0,
@@ -51,7 +52,12 @@ const RentModal = () => {
       <div className='grid grid-cols-1 md:grid-cols-2 gap-3 max-h-[50vh] overflow-y-auto'>
         {categories.map((item) => (
           <div key={item.label} className='col-span-1'>
-            {item.label}
+            <CategoryInput
+              onClick={() => {}}
+              selected={false}
+              label={item.label}
+              icon={item.icon}
+            />
           </div>
         ))}
       </div>
