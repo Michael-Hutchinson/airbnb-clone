@@ -1,9 +1,10 @@
 import { Nunito } from 'next/font/google';
 import './globals.css';
 import Navbar from './components/navbar/Navbar';
+import RentModal from './components/modals/RentModal/RentModal';
+import LoginModal from './components/modals/LoginModal/LoginModal';
 import RegisterModal from './components/modals/RegisterModal/RegisterModal';
 import ToasterProvider from './providers/ToasterProvider';
-import LoginModal from './components/modals/LoginModal/LoginModal';
 import { getCurrentUser } from './actions/getCurrentUser';
 
 export const metadata = {
@@ -25,6 +26,7 @@ export default async function RootLayout({
     <html lang='en'>
       <body className={font.className}>
         <ToasterProvider />
+        <RentModal />
         <RegisterModal />
         <LoginModal />
         <Navbar currentUser={currentUser} />
