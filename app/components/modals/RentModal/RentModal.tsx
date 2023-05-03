@@ -98,12 +98,23 @@ const RentModal = () => {
     </div>
   );
 
+  if (step === Steps.Location) {
+    bodyContent = (
+      <div className='flex flex-col gap-8'>
+        <Heading
+          title='Where is your place located'
+          subtitle='Help guests find you!'
+        />
+      </div>
+    );
+  }
+
   return (
     <Modal
       title='Airbnb your home!'
       isOpen={rentModal.isOpen}
       onClose={rentModal.onClose}
-      onSubmit={rentModal.onClose}
+      onSubmit={onNext}
       actionLabel={actionLabel}
       secondaryActionLabel={secondaryActionLabel}
       secondaryAction={step === Steps.Category ? undefined : onBack}
