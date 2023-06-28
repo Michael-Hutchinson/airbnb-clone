@@ -10,6 +10,7 @@ import { FieldValues, useForm } from 'react-hook-form';
 import CountrySelect from '../../input/CountrySelect/CountrySelect';
 import dynamic from 'next/dynamic';
 import Counter from '../../input/Counter/Counter';
+import ImageUpload from '../../input/ImageUpload/ImageUpload';
 
 enum Steps {
   Category = 0,
@@ -49,6 +50,8 @@ const RentModal = () => {
   const category = watch('category');
   const location = watch('location');
   const guestCount = watch('guestCount');
+  const roomCount = watch('roomCount');
+  const bathroomCount = watch('bathroomCount');
 
   const WorldMap = useMemo(
     () =>
@@ -141,6 +144,32 @@ const RentModal = () => {
           value={guestCount}
           onChange={(value) => setCustomValue('guestCount', value)}
         />
+        <hr />
+        <Counter
+          title='Rooms'
+          subTitle='How many roms do you have?'
+          value={roomCount}
+          onChange={(value) => setCustomValue('roomCount', value)}
+        />
+        <hr />
+        <Counter
+          title='Bathrooms'
+          subTitle='How many bathrooms do you have?'
+          value={bathroomCount}
+          onChange={(value) => setCustomValue('bathroomCount', value)}
+        />
+      </div>
+    );
+  }
+
+  if (step === Steps.Images) {
+    bodyContent = (
+      <div className='flex flex-col gap-8'>
+        <Heading
+          title='Add a photo of your place'
+          subtitle='Show guests what your place looks like!'
+        />
+        <ImageUpload />
       </div>
     );
   }
