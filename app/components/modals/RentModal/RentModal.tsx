@@ -8,7 +8,7 @@ import { categories } from '../../navbar/categories/categoryItems';
 import CategoryInput from '../../input/CategoryInput/CategoryInput';
 import { FieldValues, useForm } from 'react-hook-form';
 import CountrySelect from '../../input/CountrySelect/CountrySelect';
-import WorldMap from '../../Map/Map';
+import dynamic from 'next/dynamic';
 
 enum Steps {
   Category = 0,
@@ -47,6 +47,15 @@ const RentModal = () => {
 
   const category = watch('category');
   const location = watch('location');
+
+  const WorldMap = useMemo(
+    () =>
+      dynamic(() => import('../../Map/Map'), {
+        ssr: false,
+      }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [location]
+  );
 
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value, {
@@ -112,7 +121,7 @@ const RentModal = () => {
           value={location}
           onChange={(value) => setCustomValue('location', value)}
         />
-        <WorldMap />
+        <WorldMap center={location?.latlng} />
       </div>
     );
   }
