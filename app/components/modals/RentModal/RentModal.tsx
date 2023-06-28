@@ -126,6 +126,17 @@ const RentModal = () => {
     );
   }
 
+  if (step === Steps.Info) {
+    bodyContent = (
+      <div className='flex flex-col gap-8'>
+        <Heading
+          title='Share some basics about your place'
+          subtitle='What amenities do you have?'
+        />
+      </div>
+    );
+  }
+
   return (
     <Modal
       title='Airbnb your home!'
