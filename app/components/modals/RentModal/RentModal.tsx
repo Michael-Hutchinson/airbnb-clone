@@ -8,6 +8,7 @@ import { categories } from '../../navbar/categories/categoryItems';
 import CategoryInput from '../../input/CategoryInput/CategoryInput';
 import { FieldValues, useForm } from 'react-hook-form';
 import CountrySelect from '../../input/CountrySelect/CountrySelect';
+import Map from '../../Map/Map';
 
 enum Steps {
   Category = 0,
@@ -111,6 +112,7 @@ const RentModal = () => {
           value={location}
           onChange={(value) => setCustomValue('location', value)}
         />
+        <Map />
       </div>
     );
   }
