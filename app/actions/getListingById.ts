@@ -4,10 +4,8 @@ interface GetListingById {
   listingId?: string;
 }
 
-export default async function getListingById(params: GetListingById) {
+export default async function getListingById({ listingId }: GetListingById) {
   try {
-    const { listingId } = params;
-
     const listing = await prisma.listing.findUnique({
       where: {
         id: listingId,
