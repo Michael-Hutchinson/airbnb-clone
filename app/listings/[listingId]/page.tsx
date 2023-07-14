@@ -17,7 +17,6 @@ const ListingPage = async ({ params }: { params: ListingPageProps }) => {
 
   return (
     <div>
-      <h1>{listing.title}</h1>
       <Listing listing={listing} currentUser={currentUser} />
     </div>
   );
