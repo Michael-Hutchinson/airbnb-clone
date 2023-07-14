@@ -1,7 +1,7 @@
 import getCurrentUser from '@/app/actions/getCurrentUser';
 import getListingById from '@/app/actions/getListingById';
 import EmptyState from '@/app/components/emptystate/EmptyState';
-import ListingClient from '@/app/components/listings/ListingClient.tsx/ListingClient';
+import Listing from '@/app/components/listings/Listing';
 
 interface ListingPageProps {
   listingId?: string;
@@ -18,7 +18,7 @@ const ListingPage = async ({ params }: { params: ListingPageProps }) => {
   return (
     <div>
       <h1>{listing.title}</h1>
-      <ListingClient listing={listing} currentUser={currentUser} />
+      <Listing listing={listing} currentUser={currentUser} />
     </div>
   );
 };
