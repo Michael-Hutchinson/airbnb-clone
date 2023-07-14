@@ -3,6 +3,7 @@ import getListings from './actions/getListings';
 import Container from './components/container/Container';
 import EmptyState from './components/emptystate/EmptyState';
 import ListingCard from './components/listings/ListingCard/ListingCard';
+import { SafeListing } from './types';
 
 export default async function Home() {
   const listings = await getListings();
