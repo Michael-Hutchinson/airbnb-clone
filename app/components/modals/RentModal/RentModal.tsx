@@ -45,7 +45,7 @@ const RentModal = () => {
       guestCount: 1,
       roomCount: 1,
       bathroomCount: 1,
-      imageSrcs: '',
+      imageSrc: '',
       price: 1,
       title: '',
       description: '',
@@ -57,7 +57,7 @@ const RentModal = () => {
   const guestCount = watch('guestCount');
   const roomCount = watch('roomCount');
   const bathroomCount = watch('bathroomCount');
-  const imageSrcs = watch('imageSrcs');
+  const imageSrc = watch('imageSrc');
 
   const WorldMap = useMemo(
     () =>
@@ -199,8 +199,8 @@ const RentModal = () => {
           subtitle='Show guests what your place looks like!'
         />
         <ImageUpload
-          value={imageSrcs}
-          onChange={(value) => setCustomValue('imageSrcs', value)}
+          value={imageSrc}
+          onChange={(value) => setCustomValue('imageSrc', value)}
         />
       </div>
     );
@@ -257,6 +257,7 @@ const RentModal = () => {
 
   return (
     <Modal
+      disabled={isLoading}
       title='Airbnb your home!'
       isOpen={rentModal.isOpen}
       onClose={rentModal.onClose}
