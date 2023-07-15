@@ -16,7 +16,7 @@ const TripsPage = async () => {
     return <EmptyState title="No trips" subtitle="You have no trips" />;
   }
 
-  return <Trips />;
+  return <Trips reservations={reservations} currentUser={currentUser} />;
 };
 
 export default TripsPage;
