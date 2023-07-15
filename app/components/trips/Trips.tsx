@@ -1,10 +1,19 @@
 'use client';
 
-const Trips = () => {
+import { SafeReservation, SafeUser } from '@/app/types';
+import Container from '../container/Container';
+import Heading from '../heading/Heading';
+
+interface TripsProps {
+  reservations: SafeReservation[];
+  currentUser?: SafeUser | null;
+}
+
+const Trips = ({ reservations, currentUser }: TripsProps) => {
   return (
-    <div>
-      <h1>Trips</h1>
-    </div>
+    <Container>
+      <Heading title="Trips" subtitle="Where are you going on holiday!" />
+    </Container>
   );
 };
 
