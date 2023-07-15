@@ -7,3 +7,5 @@ const Trips = () => {
     </div>
   );
 };
+
+export default Trips;
