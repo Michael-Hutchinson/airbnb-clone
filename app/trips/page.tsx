@@ -1,6 +1,7 @@
 import EmptyState from '../components/emptystate/EmptyState';
 import getCurrentUser from '../actions/getCurrentUser';
 import getReservations from '../actions/getReservations';
+import Trips from '../components/trips/Trips';
 
 const TripsPage = async () => {
   const currentUser = await getCurrentUser();
@@ -14,7 +15,8 @@ const TripsPage = async () => {
   if (reservations.length === 0) {
     return <EmptyState title="No trips" subtitle="You have no trips" />;
   }
-  return <h1>trips page</h1>;
+
+  return <Trips />;
 };
 
 export default TripsPage;
