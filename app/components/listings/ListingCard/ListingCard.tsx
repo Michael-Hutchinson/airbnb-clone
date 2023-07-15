@@ -33,7 +33,7 @@ const ListingCard = ({
 
   const location = getByValue(data.locationValue);
 
-  const handleCancel = useCallback(() => {
+  const handleCancel = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {
       e.stopPropagation();
 
@@ -42,8 +42,9 @@ const ListingCard = ({
       }
 
       onAction?.(actionId);
-    };
-  }, [actionId, disabled, onAction]);
+    },
+    [disabled, onAction, actionId],
+  );
 
   const price = useMemo(() => {
     if (reservation) {
