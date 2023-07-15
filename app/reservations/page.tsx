@@ -1,6 +1,7 @@
 import EmptyState from '../components/emptystate/EmptyState';
 import getCurrentUser from '../actions/getCurrentUser';
 import getReservations from '../actions/getReservations';
+import Reservations from '../components/reservations/Reservations';
 
 const ReservationsPage = async () => {
   const currentUser = await getCurrentUser();
@@ -19,7 +20,7 @@ const ReservationsPage = async () => {
 
   return (
     <div>
-      <h1>Reservations Page</h1>
+      <Reservations reservations={reservations} currentUser={currentUser} />
     </div>
   );
 };
