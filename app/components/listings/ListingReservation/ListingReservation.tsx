@@ -34,6 +34,11 @@ const ListingReservation = ({
         disabledDates={disabledDates}
         onChange={(value) => onChangeDate(value.selection)}
       />
+      <hr />
+      <div className="p-4 flex flex-row items-center justify-between font-semibold text-lg">
+        <div>Total</div>
+        <div>$ {totalPrice}</div>
+      </div>
     </div>
   );
 };
