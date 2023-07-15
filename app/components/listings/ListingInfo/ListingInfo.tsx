@@ -12,7 +12,7 @@ interface ListingInfoProps {
     | {
         icon: IconType;
         label: string;
-        desciption: string;
+        description: string;
       }
     | undefined;
   description: string;
@@ -53,9 +53,10 @@ const ListingInfo = ({
         <ListingCategory
           icon={category.icon}
           label={category.label}
-          description={category.desciption}
+          description={category.description}
         />
       )}
+      <hr />
     </div>
   );
 };
