@@ -23,7 +23,7 @@ export default async function getReservations({
     }
 
     if (authorId) {
-      query.authorId = { userId: authorId };
+      query.listing = { userId: authorId };
     }
 
     const reservations = await prisma.reservation.findMany({
@@ -36,18 +36,16 @@ export default async function getReservations({
       },
     });
 
-    const safeReservations = reservations.map((reservation) => {
-      const safeReservation = {
-        ...reservation,
-        createdAt: reservation.createdAt.toISOString(),
-        startDate: reservation.startDate.toISOString(),
-        endDate: reservation.endDate.toISOString(),
-        listing: {
-          ...reservation.listing,
-          createdAt: reservation.listing.createdAt.toISOString(),
-        },
-      };
-    });
+    const safeReservations = reservations.map((reservation) => ({
+      ...reservation,
+      createdAt: reservation.createdAt.toISOString(),
+      startDate: reservation.startDate.toISOString(),
+      endDate: reservation.endDate.toISOString(),
+      listing: {
+        ...reservation.listing,
+        createdAt: reservation.listing.createdAt.toISOString(),
+      },
+    }));
 
     return safeReservations;
   } catch (error: any) {
