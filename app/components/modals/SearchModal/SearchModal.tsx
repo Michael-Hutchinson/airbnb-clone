@@ -38,7 +38,8 @@ const SearchModal = () => {
   const [location, setLocation] = useState<CountrySelectValue>();
 
   const LocationMap = useMemo(
-    () => dynamic(() => import('@/app/components/map/Map'), { ssr: false }),
+    () =>
+      dynamic(() => import('@/app/components/map/WorldMap'), { ssr: false }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [location],
   );

@@ -7,7 +7,7 @@ import Avatar from '../../avatar/Avatar';
 import ListingCategory from '../ListingCategory/ListingCategory';
 import dynamic from 'next/dynamic';
 
-const LocationMap = dynamic(() => import('../../map/Map'), {
+const LocationMap = dynamic(() => import('../../map/WorldMap'), {
   ssr: false,
 });
 
