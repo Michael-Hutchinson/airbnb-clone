@@ -3,10 +3,15 @@ import getListings from './actions/getListings';
 import Container from './components/container/Container';
 import EmptyState from './components/emptystate/EmptyState';
 import ListingCard from './components/listings/ListingCard/ListingCard';
-import { SafeListing } from './types';
 
-export default async function Home() {
-  const listings = await getListings();
+interface HomeProps {
+  searchParams: {
+    userId: string;
+  };
+}
+
+const Home = async ({ searchParams }: HomeProps) => {
+  const listings = await getListings(searchParams);
   const currentUser = await getCurrentUser();
 
   if (listings.length === 0) {
@@ -15,7 +20,7 @@ export default async function Home() {
 
   return (
     <Container>
-      <div className='pt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8'>
+      <div className="pt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
         {listings.map((listing) => (
           <ListingCard
             currentUser={currentUser}
@@ -26,4 +31,6 @@ export default async function Home() {
       </div>
     </Container>
   );
-}
+};
+
+export default Home;
