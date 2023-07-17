@@ -1,6 +1,7 @@
 import EmptyState from '../components/emptystate/EmptyState';
 import getCurrentUser from '../actions/getCurrentUser';
 import getFavouriteListings from '../actions/getFavouriteListings';
+import Favourites from '../components/favourites/Favourites';
 
 const FavouritesPage = async () => {
   const listings = await getFavouriteListings();
@@ -15,7 +16,7 @@ const FavouritesPage = async () => {
     );
   }
 
-  return <div>hello</div>;
+  return <Favourites listings={listings} currentUser={currentUser} />;
 };
 
 export default FavouritesPage;
