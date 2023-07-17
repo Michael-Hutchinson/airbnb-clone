@@ -1,10 +1,18 @@
 'use client';
 
-const Favourites = () => {
+import { SafeListing, SafeUser } from '@/app/types';
+import Container from '../container/Container';
+
+interface FavouritesProps {
+  listings: SafeListing[];
+  currentUser: SafeUser | null;
+}
+
+const Favourites = ({ listings, currentUser }: FavouritesProps) => {
   return (
-    <div>
+    <Container>
       <h1>Favourites</h1>
-    </div>
+    </Container>
   );
 };
 
