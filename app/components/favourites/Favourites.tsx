@@ -2,6 +2,7 @@
 
 import { SafeListing, SafeUser } from '@/app/types';
 import Container from '../container/Container';
+import Heading from '../heading/Heading';
 
 interface FavouritesProps {
   listings: SafeListing[];
@@ -11,7 +12,10 @@ interface FavouritesProps {
 const Favourites = ({ listings, currentUser }: FavouritesProps) => {
   return (
     <Container>
-      <h1>Favourites</h1>
+      <Heading
+        title="Favourites"
+        subtitle="List of places you have favourited!"
+      />
     </Container>
   );
 };
